@@ -70,7 +70,7 @@ if [ $(uname) == "Darwin" ]; then
   # Cannot do a static compilation on Darwin.
   go build -o ./bin/publish -ldflags "-s -w" ./main/main.go
 else
-  go build -o ./bin/publish -tags "netgo" -ldflags "-extldflags \"-static\" -s -w" ./main/main.go
+  go build -o ./bin/publish -a -tags "netgo" -ldflags "-extldflags \"-static\" -s -w" ./main/main.go
 fi
 
 # test executables and binaries
