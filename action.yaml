@@ -1,0 +1,14 @@
+# action.yml
+name: 'Publish Release Assets'
+description: 'Publish assets to a Github release'
+inputs:
+  includes:
+    description: 'Who to greet'
+    required: true
+    default: 'World'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.includes }}
+    
